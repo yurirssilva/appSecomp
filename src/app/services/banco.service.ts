@@ -27,4 +27,11 @@ export class BancoService {
           retorno(JSON.parse(data.value))
       })
   }
+
+  remove(chave){
+      return new Promise (async retorno =>{
+          await Storage.remove({key: chave})
+          retorno()
+      })
+  }
 }
